@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./main.css";
-import App from "./App";
+import "./common/styles/main.css";
+import Team from "./pages/Team";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Team />
   </React.StrictMode>,
   document.getElementById("root")
 );
