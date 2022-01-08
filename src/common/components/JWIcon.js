@@ -1,5 +1,4 @@
 import React from "react";
-
 import "../styles/icons.css";
 
 import callIcon from "../assets/call.png";

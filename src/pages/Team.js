@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../common/styles/team.css";
 import JWTypography from "../common/components/JWTypography";
 import JWCard from "../common/components/JWCard";
 import JWList from "../common/components/JWList";
 import JWSearchField from "../common/components/JWSearchField";
 import JWIcon, { icons } from "../common/components/JWIcon";
+import { fetchUsers } from "../common/api";
 
 const Team = () => {
+  const [users, setUsers] = useState([]);
+
+  // useEffect to fetch data
+  useEffect(() => {
+    fetchUsers((val) => setUsers(val));
+  }, []);
+
   return (
     <div className="main">
       <JWTypography value="John Doe" variant="heading" />
@@ -22,9 +30,19 @@ const Team = () => {
         </div>
       </div>
       <div className="cards">
-        {[1, 1, 1, 1, 1, 1].map((el, idx) => (
-          <JWList key={idx} />
-          // <JWCard />
+        {users.map(({ name, picture, location }, idx) => (
+          // <JWList
+          //   key={idx}
+          //   city={location?.city}
+          //   name={`${name?.first} ${name?.last}`}
+          //   pic={picture?.medium}
+          // />
+          <JWCard
+            key={idx}
+            city={location?.city}
+            name={`${name?.first} ${name?.last}`}
+            pic={picture?.medium}
+          />
         ))}
       </div>
     </div>
