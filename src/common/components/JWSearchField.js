@@ -6,7 +6,7 @@ export default function JWSearchField({ onChange }) {
   const [enableSearch, setEnableSearch] = useState(false);
   const [searchText, setSearchText] = useState("");
 
-  const onSearchTextChange = (evt) => {
+  const handleSearchTextChange = (evt) => {
     setSearchText(evt.target.value);
     onChange(evt.target.value);
   };
@@ -20,7 +20,7 @@ export default function JWSearchField({ onChange }) {
         value={searchText}
         className="search-field"
         autoFocus={enableSearch}
-        onChange={onSearchTextChange}
+        onChange={handleSearchTextChange}
       />
     </div>
   );

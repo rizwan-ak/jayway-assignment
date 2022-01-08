@@ -1,10 +1,10 @@
 import axios from "axios";
 const api = axios.create({ baseURL: "https://randomuser.me/api/" });
 
-export const fetchUsers = async (callBack) => {
+export const fetchUsers = async (pageNumber, filteredUsers, callBack) => {
   try {
-    const response = await api.get(`?results=6`);
-    callBack(response?.data?.results);
+    const response = await api.get(`?page=${pageNumber}&results=6`);
+    callBack([...filteredUsers, ...response?.data?.results]);
   } catch (err) {
     console.error(err);
   }

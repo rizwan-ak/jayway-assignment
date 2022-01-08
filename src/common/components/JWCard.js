@@ -4,7 +4,7 @@ import JWTypography from "./JWTypography";
 import "../styles/card.css";
 import JWIcon, { icons } from "./JWIcon";
 
-export default function JWCard({ name, pic, city }) {
+export default function JWCard({ name, pic, city, ref }) {
   return (
     <div className="card">
       <div className="card-gradient" />

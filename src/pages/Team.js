@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import "../common/styles/team.css";
 import JWTypography from "../common/components/JWTypography";
 import JWCard from "../common/components/JWCard";
@@ -7,6 +7,7 @@ import JWSearchField from "../common/components/JWSearchField";
 import JWIcon, { icons } from "../common/components/JWIcon";
 import { fetchUsers } from "../common/api";
 import { toggleSort, filterUsers } from "../common/utils";
+import JWButton from "../common/components/JWButton";
 
 const Team = () => {
   const [users, setUsers] = useState([]);
@@ -14,13 +15,15 @@ const Team = () => {
   const [isAsc, setIsAsc] = useState(true);
   const [filteredUsers, setFilteredUsers] = useState([]);
 
+  const [pageNumber, setPageNumber] = useState(1);
+
   // useEffect to fetch data
   useEffect(() => {
-    fetchUsers((val) => {
+    fetchUsers(pageNumber, users, (val) => {
       setUsers(toggleSort(val, isAsc, setIsAsc));
       setFilteredUsers(toggleSort(val, isAsc, setIsAsc));
     });
-  }, []);
+  }, [pageNumber]);
 
   return (
     <div className="main">
@@ -58,12 +61,14 @@ const Team = () => {
                   pic={picture?.medium}
                 />
               ) : (
-                <JWCard
-                  key={idx}
-                  city={location?.city}
-                  name={`${name?.first} ${name?.last}`}
-                  pic={picture?.medium}
-                />
+                <>
+                  <JWCard
+                    key={idx}
+                    city={location?.city}
+                    name={`${name?.first} ${name?.last}`}
+                    pic={picture?.medium}
+                  />
+                </>
               )}
             </>
           ))}
@@ -74,6 +79,12 @@ const Team = () => {
           variant="error"
         />
       )}
+
+      <JWButton
+        handleButtonClick={() =>
+          setPageNumber((prevPageNumber) => prevPageNumber + 1)
+        }
+      />
     </div>
   );
 };
