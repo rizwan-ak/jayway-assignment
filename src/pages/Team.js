@@ -6,14 +6,20 @@ import JWList from "../common/components/JWList";
 import JWSearchField from "../common/components/JWSearchField";
 import JWIcon, { icons } from "../common/components/JWIcon";
 import { fetchUsers } from "../common/api";
+import { toggleSort } from "../common/utils";
 
 const Team = () => {
   const [users, setUsers] = useState([]);
   const [isList, setIsList] = useState(false);
+  const [isAsc, setIsAsc] = useState(true);
+  const [filteredUsers, setFilteredUsers] = useState([]);
 
   // useEffect to fetch data
   useEffect(() => {
-    fetchUsers((val) => setUsers(val));
+    fetchUsers((val) => {
+      setUsers(toggleSort(val, isAsc, setIsAsc));
+      setFilteredUsers(toggleSort(val, isAsc, setIsAsc));
+    });
   }, []);
 
   return (
@@ -21,7 +27,12 @@ const Team = () => {
       <JWTypography value="John Doe" variant="heading" />
       <div className="search-and-filter-box">
         <div className="sort-box">
-          <JWIcon src={icons.sort} />
+          <JWIcon
+            src={icons.sort}
+            onClick={(setFilteredUsers) =>
+              setFilteredUsers(toggleSort(filteredUsers, isAsc, setIsAsc))
+            }
+          />
         </div>
         <div className="search-box">
           <JWSearchField />
@@ -34,7 +45,7 @@ const Team = () => {
         </div>
       </div>
       <div className="cards">
-        {users.map(({ name, picture, location }, idx) => (
+        {filteredUsers.map(({ name, picture, location }, idx) => (
           <>
             {isList ? (
               <JWList
