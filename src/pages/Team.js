@@ -46,27 +46,34 @@ const Team = () => {
           />
         </div>
       </div>
-      <div className="cards">
-        {filteredUsers.map(({ name, picture, location }, idx) => (
-          <>
-            {isList ? (
-              <JWList
-                key={idx}
-                city={location?.city}
-                name={`${name?.first} ${name?.last}`}
-                pic={picture?.medium}
-              />
-            ) : (
-              <JWCard
-                key={idx}
-                city={location?.city}
-                name={`${name?.first} ${name?.last}`}
-                pic={picture?.medium}
-              />
-            )}
-          </>
-        ))}
-      </div>
+      {filteredUsers.length > 0 ? (
+        <div className="cards">
+          {filteredUsers.map(({ name, picture, location }, idx) => (
+            <>
+              {isList ? (
+                <JWList
+                  key={idx}
+                  city={location?.city}
+                  name={`${name?.first} ${name?.last}`}
+                  pic={picture?.medium}
+                />
+              ) : (
+                <JWCard
+                  key={idx}
+                  city={location?.city}
+                  name={`${name?.first} ${name?.last}`}
+                  pic={picture?.medium}
+                />
+              )}
+            </>
+          ))}
+        </div>
+      ) : (
+        <JWTypography
+          value="Something went wrong please check our internet connection and refresh the page."
+          variant="error"
+        />
+      )}
     </div>
   );
 };

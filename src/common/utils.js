@@ -7,8 +7,10 @@ export const toggleSort = (array, isAsc, setIsAsc) => {
 
 export const filterUsers = (val, array, callback) => {
   return callback(
-    array.filter((el) =>
-      el?.name?.first?.toLowerCase().includes(val.toLowerCase())
+    array.filter(
+      (el) =>
+        el?.name?.first?.toLowerCase().includes(val.toLowerCase()) ||
+        el?.name?.last?.toLowerCase().includes(val.toLowerCase())
     )
   );
 };

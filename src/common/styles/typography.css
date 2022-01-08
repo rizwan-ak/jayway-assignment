@@ -5,6 +5,15 @@
   font-weight: 400;
 }
 
+.error {
+  font-family: Work Sans;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 150px;
+}
+
 .title {
   font-family: Karla;
   font-size: 18px;
