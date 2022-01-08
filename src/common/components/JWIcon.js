@@ -1,13 +1,23 @@
 import React from "react";
-import CallIcon from "../assets/call.png";
-import EmailIcon from "../assets/msg.png";
 
-export default function JWIcon({ call }) {
-  return (
-    <img
-      src={call ? CallIcon : EmailIcon}
-      alt={call ? "Call Icon" : "Email Icon"}
-      className={!call && "icon-margin-right"}
-    />
-  );
+import "../styles/icons.css";
+
+import callIcon from "../assets/call.png";
+import msgIcon from "../assets/msg.png";
+import searchIcon from "../assets/search.png";
+import sortIcon from "../assets/sort.png";
+import listIcon from "../assets/list.png";
+import cardsIcon from "../assets/cards.png";
+
+export default function JWIcon({ src, onClick }) {
+  return <img src={src} alt={""} className="icon" onClick={onClick} />;
 }
+
+export const icons = {
+  call: callIcon,
+  msg: msgIcon,
+  cards: cardsIcon,
+  list: listIcon,
+  sort: sortIcon,
+  search: searchIcon,
+};

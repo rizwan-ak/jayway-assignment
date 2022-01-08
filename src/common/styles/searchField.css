@@ -1,0 +1,21 @@
+.search-field {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  height: 20px;
+  width: 100%;
+}
+
+.search-field-box {
+  width: 320px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+@media screen and (max-width: 600px) {
+  .search-field-box {
+    width: 100%;
+  }
+}
