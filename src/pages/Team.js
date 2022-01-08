@@ -6,7 +6,7 @@ import JWList from "../common/components/JWList";
 import JWSearchField from "../common/components/JWSearchField";
 import JWIcon, { icons } from "../common/components/JWIcon";
 import { fetchUsers } from "../common/api";
-import { toggleSort } from "../common/utils";
+import { toggleSort, filterUsers } from "../common/utils";
 
 const Team = () => {
   const [users, setUsers] = useState([]);
@@ -24,7 +24,7 @@ const Team = () => {
 
   return (
     <div className="main">
-      <JWTypography value="John Doe" variant="heading" />
+      <JWTypography value="Meet the Team" variant="heading" />
       <div className="search-and-filter-box">
         <div className="sort-box">
           <JWIcon
@@ -35,7 +35,9 @@ const Team = () => {
           />
         </div>
         <div className="search-box">
-          <JWSearchField />
+          <JWSearchField
+            onChange={(val) => filterUsers(val, users, setFilteredUsers)}
+          />
         </div>
         <div className="list-toggle-box">
           <JWIcon
