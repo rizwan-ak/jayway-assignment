@@ -9,6 +9,7 @@ import { fetchUsers } from "../common/api";
 
 const Team = () => {
   const [users, setUsers] = useState([]);
+  const [isList, setIsList] = useState(false);
 
   // useEffect to fetch data
   useEffect(() => {
@@ -26,23 +27,31 @@ const Team = () => {
           <JWSearchField />
         </div>
         <div className="list-toggle-box">
-          <JWIcon src={icons.list} />
+          <JWIcon
+            src={isList ? icons.list : icons.cards}
+            onClick={() => setIsList(!isList)}
+          />
         </div>
       </div>
       <div className="cards">
         {users.map(({ name, picture, location }, idx) => (
-          // <JWList
-          //   key={idx}
-          //   city={location?.city}
-          //   name={`${name?.first} ${name?.last}`}
-          //   pic={picture?.medium}
-          // />
-          <JWCard
-            key={idx}
-            city={location?.city}
-            name={`${name?.first} ${name?.last}`}
-            pic={picture?.medium}
-          />
+          <>
+            {isList ? (
+              <JWList
+                key={idx}
+                city={location?.city}
+                name={`${name?.first} ${name?.last}`}
+                pic={picture?.medium}
+              />
+            ) : (
+              <JWCard
+                key={idx}
+                city={location?.city}
+                name={`${name?.first} ${name?.last}`}
+                pic={picture?.medium}
+              />
+            )}
+          </>
         ))}
       </div>
     </div>
