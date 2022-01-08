@@ -8,8 +8,10 @@ import sortIcon from "../assets/sort.png";
 import listIcon from "../assets/list.png";
 import cardsIcon from "../assets/cards.png";
 
-export default function JWIcon({ src, onClick }) {
-  return <img src={src} alt={""} className="icon" onClick={onClick} />;
+export default function JWIcon({ src, onClick, label }) {
+  return (
+    <img src={src} label={label} alt={""} className="icon" onClick={onClick} />
+  );
 }
 
 export const icons = {

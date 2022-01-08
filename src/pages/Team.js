@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../common/styles/team.css";
 import JWTypography from "../common/components/JWTypography";
 import JWCard from "../common/components/JWCard";
@@ -23,6 +23,8 @@ const Team = () => {
       setUsers(toggleSort(val, isAsc, setIsAsc));
       setFilteredUsers(toggleSort(val, isAsc, setIsAsc));
     });
+
+    // eslint-disable-next-line
   }, [pageNumber]);
 
   return (
@@ -31,6 +33,7 @@ const Team = () => {
       <div className="search-and-filter-box">
         <div className="sort-box">
           <JWIcon
+            label="toggle-layout"
             src={icons.sort}
             onClick={(setFilteredUsers) =>
               setFilteredUsers(toggleSort(filteredUsers, isAsc, setIsAsc))
@@ -81,6 +84,7 @@ const Team = () => {
       )}
 
       <JWButton
+        value="Load More"
         handleButtonClick={() =>
           setPageNumber((prevPageNumber) => prevPageNumber + 1)
         }

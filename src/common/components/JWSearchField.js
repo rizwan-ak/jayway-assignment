@@ -15,6 +15,7 @@ export default function JWSearchField({ onChange }) {
     <div className="search-field-box">
       <JWIcon src={icons.search} onClick={() => setEnableSearch(true)} />
       <input
+        aria-label="search-field"
         type="text"
         placeholder=""
         value={searchText}

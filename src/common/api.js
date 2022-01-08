@@ -3,7 +3,10 @@ const api = axios.create({ baseURL: "https://randomuser.me/api/" });
 
 export const fetchUsers = async (pageNumber, filteredUsers, callBack) => {
   try {
-    const response = await api.get(`?page=${pageNumber}&results=6`);
+    const response = await api.get(
+      `?page=${pageNumber}&results=6&seed=abc?nat=gb`
+    );
+    console.log(`response`, response);
     callBack([...filteredUsers, ...response?.data?.results]);
   } catch (err) {
     console.error(err);
