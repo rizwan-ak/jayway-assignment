@@ -1,4 +1,4 @@
-###Featres
+# Featres
 
 - Toggle between grid and list view
 - Sorting by name (ascending and descending) functionality
@@ -12,7 +12,8 @@
 
 [Live Demo](https://jayway-assignment.netlify.app/)
 
-#Available Scripts
+# Available Scripts
+
 In the project directory, you can run:
 
 `yarn` or `npm install`
@@ -31,13 +32,14 @@ In the project directory, you can run:
 
 ##### To build the project
 
-#ScreenShots
+# ScreenShots
+
 [Card Layout](https://drive.google.com/file/d/1wFUBmRkK0Is32Qs-_uC5zcNKWX8S8JdP/view?usp=sharing)
 [List Layout](https://drive.google.com/file/d/17vt-B_KnK0BpVi01wYuUeMdHtOoo7BoM/view?usp=sharing)
 [Mobile Card Layout](https://drive.google.com/file/d/1QRl2bCA41nwtbH5zGilDuAz4EAC2NYDm/view?usp=sharing)
 [Mobile List Layout](https://drive.google.com/file/d/1fNtnv-BbH5ALluLZ4-EBQsneDtgFotlS/view?usp=sharing)
 
-#Folder Structure
+# Folder Structure
 
 - src
   - common
