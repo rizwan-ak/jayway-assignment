@@ -28,67 +28,70 @@ const Team = () => {
   }, [pageNumber]);
 
   return (
-    <div className="main">
+    <div className="main-box">
       <JWTypography value="Meet the Team" variant="heading" />
-      <div className="search-and-filter-box">
-        <div className="sort-box">
-          <JWIcon
-            label="toggle-layout"
-            src={icons.sort}
-            onClick={(setFilteredUsers) =>
-              setFilteredUsers(toggleSort(filteredUsers, isAsc, setIsAsc))
-            }
-          />
-        </div>
-        <div className="search-box">
-          <JWSearchField
-            onChange={(val) => filterUsers(val, users, setFilteredUsers)}
-          />
-        </div>
-        <div className="list-toggle-box">
-          <JWIcon
-            src={isList ? icons.list : icons.cards}
-            onClick={() => setIsList(!isList)}
-          />
-        </div>
-      </div>
-      {filteredUsers.length > 0 ? (
-        <div className="cards">
-          {filteredUsers.map(({ name, picture, location }, idx) => (
-            <>
-              {isList ? (
-                <JWList
-                  key={idx}
-                  city={location?.city}
-                  name={`${name?.first} ${name?.last}`}
-                  pic={picture?.medium}
-                />
-              ) : (
-                <>
-                  <JWCard
+      <main className="inner-box">
+        <section aria-label="filters" className="search-and-filter-box">
+          <div className="sort-box">
+            <JWIcon
+              label={`sort-${isAsc ? "de" : "a"}scending`}
+              src={icons.sort}
+              onClick={(setFilteredUsers) =>
+                setFilteredUsers(toggleSort(filteredUsers, isAsc, setIsAsc))
+              }
+            />
+          </div>
+          <div className="search-box">
+            <JWSearchField
+              onChange={(val) => filterUsers(val, users, setFilteredUsers)}
+            />
+          </div>
+
+          <div className="list-toggle-box">
+            <JWIcon
+              label={`toggle-to-${isList ? "card" : "list"}-layout`}
+              src={isList ? icons.list : icons.cards}
+              onClick={() => setIsList(!isList)}
+            />
+          </div>
+        </section>
+        {filteredUsers.length > 0 ? (
+          <section aria-label="list-of-users" className="cards">
+            {filteredUsers.map(({ name, picture, location }, idx) => (
+              <>
+                {isList ? (
+                  <JWList
                     key={idx}
                     city={location?.city}
                     name={`${name?.first} ${name?.last}`}
                     pic={picture?.medium}
                   />
-                </>
-              )}
-            </>
-          ))}
-        </div>
-      ) : (
-        <JWTypography
-          value="Something went wrong please check our internet connection and refresh the page."
-          variant="error"
-        />
-      )}
-
-      <JWButton
-        value="Load More"
-        handleButtonClick={() =>
-          setPageNumber((prevPageNumber) => prevPageNumber + 1)
-        }
-      />
+                ) : (
+                  <>
+                    <JWCard
+                      key={idx}
+                      city={location?.city}
+                      name={`${name?.first} ${name?.last}`}
+                      pic={picture?.medium}
+                    />
+                  </>
+                )}
+              </>
+            ))}
+            <JWButton
+              value="Load More"
+              handleButtonClick={() =>
+                setPageNumber((prevPageNumber) => prevPageNumber + 1)
+              }
+            />
+          </section>
+        ) : (
+          <JWTypography
+            value="Something went wrong please check our internet connection and refresh the page."
+            variant="error"
+          />
+        )}
+      </main>
     </div>
   );
 };

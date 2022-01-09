@@ -16,8 +16,8 @@ export default function JWList({ name, pic, city }) {
           <JWTypography value={city} variant="sub-title" />
         </div>
         <div className="list-inline">
-          <JWIcon src={icons.msgIcon} />
-          <JWIcon src={icons.callIcon} />
+          <JWIcon src={icons.msg} label={`email-${name}`} />
+          <JWIcon src={icons.call} label={`call-${name}`} />
         </div>
       </div>
     </div>

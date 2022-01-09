@@ -6,7 +6,6 @@ export const fetchUsers = async (pageNumber, filteredUsers, callBack) => {
     const response = await api.get(
       `?page=${pageNumber}&results=6&seed=abc?nat=gb`
     );
-    console.log(`response`, response);
     callBack([...filteredUsers, ...response?.data?.results]);
   } catch (err) {
     console.error(err);

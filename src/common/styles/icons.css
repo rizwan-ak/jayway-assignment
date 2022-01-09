@@ -1,6 +1,10 @@
 .icon {
-  margin-right: 10px;
   max-height: 24px;
   max-width: 24px;
+}
+.icon-button {
+  background-color: transparent;
+  border: none;
+  margin-right: 10px;
   cursor: pointer;
 }

@@ -19,6 +19,7 @@ export default function JWSearchField({ onChange }) {
         type="text"
         placeholder=""
         value={searchText}
+        name="search users"
         className="search-field"
         autoFocus={enableSearch}
         onChange={handleSearchTextChange}

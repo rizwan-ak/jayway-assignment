@@ -10,7 +10,13 @@ import cardsIcon from "../assets/cards.png";
 
 export default function JWIcon({ src, onClick, label }) {
   return (
-    <img src={src} label={label} alt={""} className="icon" onClick={onClick} />
+    <button
+      className="icon-button"
+      aria-label={`icon-to-${label}`}
+      onClick={onClick}
+    >
+      <img src={src} alt={label} className="icon" />
+    </button>
   );
 }
 
