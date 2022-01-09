@@ -10,6 +10,8 @@
 - Unit testing of some UI cimponents and api call
 - Use of html semantics and aria attributes
 
+# Demo
+
 [Live Demo](https://jayway-assignment.netlify.app/)
 
 # Available Scripts
