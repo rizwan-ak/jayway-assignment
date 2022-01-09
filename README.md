@@ -1,4 +1,4 @@
-##Featres
+###Featres
 
 - Toggle between grid and list view
 - Sorting by name (ascending and descending) functionality
