@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+#Featres
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Toggle between grid and list view
+- Sorting by name (ascending and descending) functionality
+- Search by name functionality
+- Handle empty or error states
+- Lazy loading of images
+- Lazy loading of cards (by only fetching 6 more users everytime load more button is clicked)
+- Responsive design
+- Unit testing of some UI cimponents and api call
+- Use of html semantics and aria attributes
 
-## Available Scripts
+[Live Demo](https://jayway-assignment.netlify.app/)
 
+#Available Scripts
 In the project directory, you can run:
 
-### `npm start`
+`yarn` or `npm install`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##### To install the dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`yarn start` or `npm start`
 
-### `npm test`
+##### To run the project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`yarn test` or `npm test`
 
-### `npm run build`
+##### To run the tests
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`yarn build` or `npm run build`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##### To build the project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#ScreenShots
+[Card Layout](https://drive.google.com/file/d/1wFUBmRkK0Is32Qs-_uC5zcNKWX8S8JdP/view?usp=sharing)
+[List Layout](https://drive.google.com/file/d/17vt-B_KnK0BpVi01wYuUeMdHtOoo7BoM/view?usp=sharing)
+[Mobile Card Layout](https://drive.google.com/file/d/1QRl2bCA41nwtbH5zGilDuAz4EAC2NYDm/view?usp=sharing)
+[Mobile List Layout](https://drive.google.com/file/d/1fNtnv-BbH5ALluLZ4-EBQsneDtgFotlS/view?usp=sharing)
 
-### `npm run eject`
+#Folder Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- src
+  - common
+    - test (contains all the unit tests)
+    - assets (contains all the static assets like icons)
+    - compnents (contains all the reusable components)
+    - styles (contains all style sheets css files)
+    - api.js
+    - data.json
+    - utils.js
+  - pages
+  - index.js
