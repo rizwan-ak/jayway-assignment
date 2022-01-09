@@ -6,7 +6,7 @@ import JWIcon, { icons } from "./JWIcon";
 
 export default function JWCard({ name, pic, city, ref }) {
   return (
-    <div className="card">
+    <article className="card">
       <div className="card-color-outer-box">
         <div className="card-color-box">
           <JWTypography value={name} variant="title" />
@@ -22,7 +22,6 @@ export default function JWCard({ name, pic, city, ref }) {
           <JWIcon src={icons.call} label={`call-${name}`} />
         </div>
       </div>
-      {/* {/* <div className="card-gradient" /> */}
-    </div>
+    </article>
   );
 }

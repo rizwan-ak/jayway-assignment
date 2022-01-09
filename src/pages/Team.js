@@ -8,18 +8,19 @@ import JWIcon, { icons } from "../common/components/JWIcon";
 import { fetchUsers } from "../common/api";
 import { toggleSort, filterUsers } from "../common/utils";
 import JWButton from "../common/components/JWButton";
+import data from "../common/data.json";
 
 const Team = () => {
   const [users, setUsers] = useState([]);
   const [isList, setIsList] = useState(false);
   const [isAsc, setIsAsc] = useState(true);
   const [filteredUsers, setFilteredUsers] = useState([]);
-
   const [pageNumber, setPageNumber] = useState(1);
+  const [isError, setIsError] = useState(false);
 
   // useEffect to fetch data
   useEffect(() => {
-    fetchUsers(pageNumber, users, (val) => {
+    fetchUsers(pageNumber, users, setIsError, (val) => {
       setUsers(toggleSort(val, isAsc, setIsAsc));
       setFilteredUsers(toggleSort(val, isAsc, setIsAsc));
     });
@@ -29,7 +30,7 @@ const Team = () => {
 
   return (
     <div className="main-box">
-      <JWTypography value="Meet the Team" variant="heading" />
+      <JWTypography value={data.heading} variant="heading" />
       <main className="inner-box">
         <section aria-label="filters" className="search-and-filter-box">
           <div className="sort-box">
@@ -55,7 +56,7 @@ const Team = () => {
             />
           </div>
         </section>
-        {filteredUsers.length > 0 ? (
+        {!isError ? (
           <section aria-label="list-of-users" className="cards">
             {filteredUsers.map(({ name, picture, location }, idx) => (
               <>
@@ -79,17 +80,14 @@ const Team = () => {
               </>
             ))}
             <JWButton
-              value="Load More"
+              value={data.loadMoreButtonText}
               handleButtonClick={() =>
                 setPageNumber((prevPageNumber) => prevPageNumber + 1)
               }
             />
           </section>
         ) : (
-          <JWTypography
-            value="Something went wrong please check our internet connection and refresh the page."
-            variant="error"
-          />
+          <JWTypography value={data.errorText} variant="error" />
         )}
       </main>
     </div>

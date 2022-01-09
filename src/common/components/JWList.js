@@ -6,8 +6,11 @@ import JWIcon, { icons } from "./JWIcon";
 
 export default function JWList({ name, pic, city }) {
   return (
-    <div className="list">
-      <div className="list-gradient">
+    <article className="list">
+
+      <div className="list-color-section">
+      </div>
+      <div className="list-details">
         <div className="list-image">
           <JWAvatar src={pic} />
         </div>
@@ -20,6 +23,6 @@ export default function JWList({ name, pic, city }) {
           <JWIcon src={icons.call} label={`call-${name}`} />
         </div>
       </div>
-    </div>
+    </article>
   );
 }

@@ -1,22 +1,24 @@
 .list {
-  position: relative;
   height: 100px;
   width: 100%;
   border-radius: 20px;
   background-color: #e3d5c9;
   margin: 10px;
+  display: flex;
 }
 
-.list-gradient {
-  position: absolute;
+.list-color-section {
+  min-width: 80px;
+  background-color: transparent;
+}
+
+.list-details {
   display: flex;
   flex-direction: row;
   align-items: center;
   background-color: white;
   border-radius: 40px 20px 20px 0;
-  height: 100px;
-  width: 92%;
-  right: 0;
+  flex-grow: 1;
 }
 
 .list-image {
@@ -37,6 +39,9 @@
   .list {
     width: 92%;
     border-radius: 12.5;
+  }
+  .list-color-section {
+    min-width: 50px;
   }
   .list-gradient {
     width: 80%;

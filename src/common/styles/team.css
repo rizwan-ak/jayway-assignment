@@ -31,12 +31,9 @@
 }
 
 .cards {
-  /* padding: 40px; */
-  /* background-color: brown; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* justify-content: space-around; */
 }
 
 @media screen and (max-width: 600px) {

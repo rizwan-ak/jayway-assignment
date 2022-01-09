@@ -2,9 +2,9 @@
   display: flex;
   flex-direction: column;
   height: 342px;
-  width: 210px;
+  width: 30%;
   border-radius: 20px;
-  margin: 10px;
+  margin: 20px 0 20px 0;
   background-color: #e3d5c9;
 }
 
@@ -25,6 +25,7 @@
   align-items: center;
 }
 .card-details-box {
+  position: relative;
   height: 50%;
   width: 100%;
   display: flex;
@@ -35,19 +36,20 @@
   border-radius: 60px 0 20px 20px;
 }
 
-@media screen and (max-width: 600px) {
-  .card {
-    height: 330px;
-    width: 170px;
-  }
-}
-
 .card-image {
-  margin-top: -100px;
-  margin-bottom: 20px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .card-icons-box {
   display: flex;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 920px) {
+  .card {
+    width: 45%;
+  }
 }

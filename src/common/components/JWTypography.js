@@ -16,7 +16,3 @@ export default function JWTypography({ variant, value }) {
     </>
   );
 }
-// title
-// h1
-// h3
-// label
